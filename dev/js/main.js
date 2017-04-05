@@ -175,9 +175,11 @@ jQuery(document).ready(function ($) {
             let wind = $(window);
             let header = $('.sticky-header');
             let hWidth = header.width();
-            let hOffsetTop = header[0].offsetTop;
+            let hOffsetTop;
 
-            $(window).scroll(function(a){
+            if(header[0]) hOffsetTop = header[0].offsetTop;
+
+            $(window).scroll(function(){
               if(wind.scrollTop() > hOffsetTop) {
                 header.css({
                   "position": "fixed",
@@ -187,7 +189,7 @@ jQuery(document).ready(function ($) {
               } else {
                 header.css({
                   "position": "static"
-                })
+                });
               }
             });
         	}
@@ -195,7 +197,11 @@ jQuery(document).ready(function ($) {
 
         zad9: function (selector) {
             if (selector) {
-                console.log(selector);
+              let module = $(".module");
+              let detached = module.detach();
+
+              detached.addClass("module__right");
+              $('.container__right').append(detached);
             }
         },
 

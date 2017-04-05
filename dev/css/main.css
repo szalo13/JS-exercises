@@ -7470,6 +7470,15 @@ a {
   border: 1px solid red;
 }
 
+.module__right ul {
+  text-align: center;
+}
+.module__right ul li {
+  display: block;
+  float: left;
+  width: 16.666666%;
+}
+
 * {
   padding: 0;
   margin: 0;
