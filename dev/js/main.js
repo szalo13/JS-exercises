@@ -109,8 +109,7 @@ jQuery(document).ready(function ($) {
             }
           }
         	if (selector) {
-            rows = $('.count-row');
-
+            let rows = $('.count-row');
             rows.each(function(){
               $(".sum", $(this)).text(calculate($(this)));
             });
@@ -127,8 +126,41 @@ jQuery(document).ready(function ($) {
         },
 
         zad6: function (selector) {
+          function addPointerAt(string, atPosition){
+
+            return string.slice(0, atPosition) + "." + string.slice(atPosition);
+          }
+
+          function formatNumbers(number){
+            let repeats = (number.length / 3 - 1);
+            let finalNumber;
+
+            for(let i = 0; i <= repeats; i++) {
+              if(i==0){
+                finalNumber = number;
+              } else {
+                if(finalNumber.indexOf(".") > 0) {
+                  finalNumber = addPointerAt(finalNumber, finalNumber.indexOf(".") - 3)
+                } else {
+                  finalNumber = addPointerAt(finalNumber, finalNumber.length - 3)
+                };
+              }
+            }
+
+            return finalNumber;
+          }
+
+          let formated = false;
+
         	if (selector) {
-        		console.log(selector);
+            $(".formNumbersBtn").bind("click", function(){
+              if(!formated){
+                $(".formatNumbers").each(function(){
+                  $(this).text(formatNumbers($(this).text()));
+                });
+              }
+              formated = true;
+            });
         	}
         },
 
