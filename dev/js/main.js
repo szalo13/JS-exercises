@@ -18,7 +18,44 @@ jQuery(document).ready(function ($) {
 
         zad1: function (selector) {
         	if (selector) {
-        		console.log(selector);
+            let counter = 0;
+            let checkboxes = $('.checkbox input');
+
+            function setCheckboxDisable(target, state) {
+              target.attr('disabled', state);
+            }
+
+        		$('#button').bind( "click", function(){
+
+              counter++;
+              switch(counter) {
+                case 1:
+                  checkboxes.each( function() {
+                    $(this).attr(
+                      {'checked': false,
+                       'disabled': true});
+                  });
+                  break;
+                case 2:
+                  checkboxes.each( function(){
+                    setCheckboxDisable($(this), false);
+                  });
+                  break;
+                case 3:
+                  checkboxes.each(function(){
+                    setCheckboxDisable($(this), true);
+                  });
+                default:
+                    checkboxes.each(function(){
+                      if(counter % 2) {
+                        setCheckboxDisable($(this), true);
+                      } else {
+                        setCheckboxDisable($(this), false);
+                      }
+                    });
+                  break;
+              }
+            });
         	}
         },
 
