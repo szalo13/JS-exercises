@@ -172,7 +172,24 @@ jQuery(document).ready(function ($) {
 
         zad8: function (selector) {
         	if (selector) {
-        		console.log(selector);
+            let wind = $(window);
+            let header = $('.sticky-header');
+            let hWidth = header.width();
+            let hOffsetTop = header[0].offsetTop;
+
+            $(window).scroll(function(a){
+              if(wind.scrollTop() > hOffsetTop) {
+                header.css({
+                  "position": "fixed",
+                  "top": "0",
+                  "width": hWidth
+                });
+              } else {
+                header.css({
+                  "position": "static"
+                })
+              }
+            });
         	}
         },
 
