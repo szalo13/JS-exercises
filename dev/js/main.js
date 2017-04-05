@@ -99,13 +99,10 @@ jQuery(document).ready(function ($) {
             switch(operator){
               case "+":
                 return number1 + number2;
-                break;
               case "-":
                 return number1 - number2;
-                break;
               case "*":
                 return number1 * number2;
-                break;
               default:
                 console.log("Nieznany operator - nie wykonamy dzialania");
                 break;
@@ -115,15 +112,17 @@ jQuery(document).ready(function ($) {
             rows = $('.count-row');
 
             rows.each(function(){
-              console.log(calculate($(this)));
               $(".sum", $(this)).text(calculate($(this)));
-            })
+            });
         	}
         },
 
         zad5: function (selector) {
         	if (selector) {
-        		console.log(selector);
+            $("#btn-task5").bind("click", function(){
+              let messageBox = confirm("Let's click a button");
+              if(messageBox) alert("SUKCES");
+            });
         	}
         },
 
