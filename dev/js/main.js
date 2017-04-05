@@ -91,8 +91,33 @@ jQuery(document).ready(function ($) {
         },
 
         zad4: function (selector) {
+          function calculate(row){
+            let number1 = Number($('.num1', row).text().trim());
+            let number2 = Number($('.num2', row).text().trim());
+            let operator = $('.operator', row).text().trim();
+
+            switch(operator){
+              case "+":
+                return number1 + number2;
+                break;
+              case "-":
+                return number1 - number2;
+                break;
+              case "*":
+                return number1 * number2;
+                break;
+              default:
+                console.log("Nieznany operator - nie wykonamy dzialania");
+                break;
+            }
+          }
         	if (selector) {
-        		console.log(selector);
+            rows = $('.count-row');
+
+            rows.each(function(){
+              console.log(calculate($(this)));
+              $(".sum", $(this)).text(calculate($(this)));
+            })
         	}
         },
 
