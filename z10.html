@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="require/libs/require.js" data-main="require/main"></script>
+    <title>Zadanie 10 - RequireJS</title>
+</head>
+<body>
+<div id="container">
+    <header id="main-header">
+        Zadanie 10
+    </header>
+
+
+    <div class="container">
+        <div class="well text-center" style="margin-left: 200px;">
+            <h4>
+                Stwórz sidebar, który będzie przyklejony do lewej i górnej krawędzi i zawsze będzie miał 100% wysokości okna przeglądarki.<br/><br/>
+                Wewnątrz sidebara mamy 3 listy, każda lista ma zajmować 1/3 wysokości sidebara. Jeśli elementy listy nie mieszczą się w tej wysokosći to powinien się pojawiać custom scrollbar wewnątrz tych list.<br/> Skrypt powinien też działać przy resize przeglądarki.
+                <br/><br/>
+                Do stworzenia custom scroll należy użyć następującego pluginu: <a href="http://manos.malihu.gr/jquery-custom-content-scroller/">http://manos.malihu.gr/jquery-custom-content-scroller/</a>
+                <br/>
+                <br/>
+                <span style="color: red;">Zadanie sprawdza znajomość <strong>RequireJs</strong>, dlatego powinno zostać wykonane przy wykorzystaniu RequireJS, jQuery oraz pluginu mCustomScrollbar. Na cele zadania stworzony został folder <strong>'require'</strong>, w którym znajdują się niezbędne biblioteki oraz pusty plik modules/sidebar.js w którym powinien znaleźć się właściwy kod odpowiedzialny za działanie zadania. Jeśli będzie to konieczne, można skorzystać z dodatkowych bibliotek lub stworzyć nowe pliki/moduły.</span>
+                <br/>
+                <br/>
+                * dodać możliwość użycia dowolnej ilości list, np jeśli będziemy mieli 5 list w sidebarze to powinny mieć one 1/5 wysokości okna.
+            </h4>
+
+        </div>
+
+        <div class="sidebar">
+            <div>
+                <ul>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                    <li>Lorem ipsum dolor</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer id="main-footer">
+
+    </footer>
+</div><!-- #container -->
+</body>
+</html>
