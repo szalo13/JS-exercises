@@ -61,7 +61,15 @@ jQuery(document).ready(function ($) {
 
         zad2: function (selector) {
         	if (selector) {
-        		console.log(selector);
+        		let elements = $(".well ul li");
+
+            elements.each(function() {
+              if ($(this).text() >= 10) {
+                $(this).css("color", "red");
+              } else {
+                //elements text is higher than 10, nothing to do.
+              }
+            });
         	}
         },
 
