@@ -7463,6 +7463,13 @@ a {
   cursor: pointer;
 }
 
+.zad3 .border-green {
+  border: 1px solid green;
+}
+.zad3 .border-red {
+  border: 1px solid red;
+}
+
 * {
   padding: 0;
   margin: 0;

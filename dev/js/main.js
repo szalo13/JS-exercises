@@ -17,13 +17,13 @@ jQuery(document).ready(function ($) {
         },
 
         zad1: function (selector) {
+          function setCheckboxDisable(target, state) {
+            target.attr('disabled', state);
+          }
+
         	if (selector) {
             let counter = 0;
             let checkboxes = $('.checkbox input');
-
-            function setCheckboxDisable(target, state) {
-              target.attr('disabled', state);
-            }
 
         		$('#button').bind( "click", function(){
 
@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
                   checkboxes.each(function(){
                     setCheckboxDisable($(this), true);
                   });
+                  break;
                 default:
                     checkboxes.each(function(){
                       if(counter % 2) {
@@ -75,7 +76,17 @@ jQuery(document).ready(function ($) {
 
         zad3: function (selector) {
         	if (selector) {
-        		console.log(selector);
+        		let elements = $(".well input");
+
+            elements.each(function(){
+              let elem = $(this);
+
+              if ($.isNumeric(elem.val())) {
+                elem.addClass("border-green");
+              } else {
+                elem.addClass("border-red");
+              }
+            });
         	}
         },
 
