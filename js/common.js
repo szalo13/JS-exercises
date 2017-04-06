@@ -214,15 +214,21 @@ jQuery(document).ready(function($) {
                 }
             }
 
-            $(document).on('click', ".actions .next-slide", function() {
+            $(document).on('click', ".actions .next-slide", function(e) {
                 if (activeSlide != slidesLength) {
-                    nextSlide();
+                  e.preventDefault();
+                  nextSlide();
+                } else {
+                  e.preventDefault();
                 }
             });
 
-            $(document).on('click', ".actions .prev-slide", function() {
+            $(document).on('click', ".actions .prev-slide", function(e) {
                 if (activeSlide !== 0) {
+                    e.preventDefault();
                     prevSlide();
+                } else {
+                    e.preventDefault();
                 }
             });
 

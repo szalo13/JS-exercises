@@ -214,15 +214,21 @@ jQuery(document).ready(function($) {
                 }
             }
 
-            $(document).on('click', ".actions .next-slide", function() {
+            $(document).on('click', ".actions .next-slide", function(e) {
                 if (activeSlide != slidesLength) {
-                    nextSlide();
+                  e.preventDefault();
+                  nextSlide();
+                } else {
+                  e.preventDefault();
                 }
             });
 
-            $(document).on('click', ".actions .prev-slide", function() {
+            $(document).on('click', ".actions .prev-slide", function(e) {
                 if (activeSlide !== 0) {
+                    e.preventDefault();
                     prevSlide();
+                } else {
+                    e.preventDefault();
                 }
             });
 
@@ -243,7 +249,7 @@ jQuery(document).ready(function($) {
             let header = $('.sticky-header');
             let hWidth = header.width();
             let hOffsetTop;
- 
+
             if (selector) {
 
                 if (header[0]) hOffsetTop = header[0].offsetTop;
