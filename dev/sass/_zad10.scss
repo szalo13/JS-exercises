@@ -1,0 +1,18 @@
+.zad10 {
+  .sidebar {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 200px;
+      height: 100vh;
+      background: rgba(0,0,0, 0.4);
+
+      .list {
+        overflow: scroll;
+      }
+  }
+
+  .sidebar ul {
+      padding-left: 30px;
+  }
+}

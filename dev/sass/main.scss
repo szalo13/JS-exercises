@@ -2,6 +2,7 @@
 @import "helpers";
 @import "zad3";
 @import "zad9";
+@import "zad10";
 
 * {
     padding: 0;
@@ -38,18 +39,6 @@ ul {
     li {
 
     }
-}
-
-.sidebar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 200px;
-    background: rgba(0,0,0, 0.4);
-}
-
-.sidebar ul {
-    padding-left: 30px;
 }
 
 quote {
