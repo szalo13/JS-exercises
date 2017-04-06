@@ -143,14 +143,14 @@ jQuery(document).ready(function ($) {
             let finalNumber;
 
             for(let i = 0; i <= repeats; i++) {
-              if(i==0){
+              if(i===0){
                 finalNumber = number;
               } else {
                 if(finalNumber.indexOf(".") > 0) {
-                  finalNumber = addPointerAt(finalNumber, finalNumber.indexOf(".") - 3)
+                  finalNumber = addPointerAt(finalNumber, finalNumber.indexOf(".") - 3);
                 } else {
-                  finalNumber = addPointerAt(finalNumber, finalNumber.length - 3)
-                };
+                  finalNumber = addPointerAt(finalNumber, finalNumber.length - 3);
+                }
               }
             }
 
@@ -185,7 +185,7 @@ jQuery(document).ready(function ($) {
               pagList.push(item);
             }
             $('.pagination ul').append(pagList);
-          };
+          }
 
           function changeSlide(slideNumber){
             slides.each(function( key, value ){
@@ -202,7 +202,7 @@ jQuery(document).ready(function ($) {
                 slide.removeClass("active");
               }
             });
-          };
+          }
 
           function nextSlide(){
             if(activeSlide != (slides.length - 1)) {
@@ -211,7 +211,7 @@ jQuery(document).ready(function ($) {
           }
 
           function prevSlide(){
-              if(activeSlide != 0) {
+              if(activeSlide !== 0) {
                 changeSlide(activeSlide - 1);
               }
           }
@@ -223,7 +223,7 @@ jQuery(document).ready(function ($) {
           });
 
           $(document).on('click', ".actions .prev-slide", function(){
-            if(activeSlide != 0){
+            if(activeSlide !== 0){
               prevSlide();
             }
           });
