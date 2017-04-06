@@ -61,7 +61,7 @@ typings/
 .sass-cache
 
 #compiled css folder
-css
+css/
 
 #compiled js folder
-js
+js/

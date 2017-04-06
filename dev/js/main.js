@@ -17,6 +17,7 @@ jQuery(document).ready(function ($) {
         },
 
         zad1: function (selector) {
+
           function setCheckboxDisable(target, state) {
             target.attr('disabled', state);
           }
@@ -61,6 +62,7 @@ jQuery(document).ready(function ($) {
         },
 
         zad2: function (selector) {
+
         	if (selector) {
         		let elements = $(".well ul li");
 
@@ -75,6 +77,7 @@ jQuery(document).ready(function ($) {
         },
 
         zad3: function (selector) {
+
         	if (selector) {
         		let elements = $(".well input");
 
@@ -91,6 +94,7 @@ jQuery(document).ready(function ($) {
         },
 
         zad4: function (selector) {
+
           function calculate(row){
             let number1 = Number($('.num1', row).text().trim());
             let number2 = Number($('.num2', row).text().trim());
@@ -126,6 +130,9 @@ jQuery(document).ready(function ($) {
         },
 
         zad6: function (selector) {
+
+          let formated = false;
+
           function addPointerAt(string, atPosition){
 
             return string.slice(0, atPosition) + "." + string.slice(atPosition);
@@ -150,8 +157,6 @@ jQuery(document).ready(function ($) {
             return finalNumber;
           }
 
-          let formated = false;
-
         	if (selector) {
             $(".formNumbersBtn").bind("click", function(){
               if(!formated){
@@ -165,8 +170,73 @@ jQuery(document).ready(function ($) {
         },
 
         zad7: function (selector) {
+          let slider = $('.slider');
+          let slides = $('li', slider);
+          let slidesLength = slides.length;
+          let activeSlide = 0;
+
+          function createPagination(){
+            let pagList = [];
+            let i;
+            let item;
+
+            for(i = 0; i < slidesLength; i++) {
+              item = '<li class="item">' + (i + 1) + '</li>';
+              pagList.push(item);
+            }
+            $('.pagination ul').append(pagList);
+          };
+
+          function changeSlide(slideNumber){
+            slides.each(function( key, value ){
+              let slide = $(this);
+
+              if(key==slideNumber) {
+                if (!slide.hasClass("active")) {
+                  slide.addClass("active");
+                  activeSlide = key;
+                } else {
+                  //posiada juz klase active
+                }
+              } else {
+                slide.removeClass("active");
+              }
+            });
+          };
+
+          function nextSlide(){
+            if(activeSlide != (slides.length - 1)) {
+              changeSlide(activeSlide + 1);
+            }
+          }
+
+          function prevSlide(){
+              if(activeSlide != 0) {
+                changeSlide(activeSlide - 1);
+              }
+          }
+
+          $(document).on('click', ".actions .next-slide", function(){
+            if(activeSlide != slidesLength){
+              nextSlide();
+            }
+          });
+
+          $(document).on('click', ".actions .prev-slide", function(){
+            if(activeSlide != 0){
+              prevSlide();
+            }
+          });
+
+          $(document).on('click', ".pagination li", function(elem){
+            changeSlide($(this).text() - 1);
+          });
+
         	if (selector) {
-        		console.log(selector);
+
+            $(window).load(function(){
+              createPagination();
+            });
         	}
         },
 

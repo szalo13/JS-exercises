@@ -1,0 +1,19 @@
+.zad7 {
+  .slider {
+    .slide {
+      display: none;
+    }
+    .slide.active {
+      display: block;
+    }
+  }
+  .pagination {
+    width: 100%;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      width: 40px;
+    }
+  }
+}

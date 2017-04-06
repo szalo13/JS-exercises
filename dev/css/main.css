@@ -7470,6 +7470,21 @@ a {
   border: 1px solid red;
 }
 
+.zad7 .slider .slide {
+  display: none;
+}
+.zad7 .slider .slide.active {
+  display: block;
+}
+.zad7 .pagination {
+  width: 100%;
+  text-align: center;
+}
+.zad7 .pagination li {
+  display: inline-block;
+  width: 40px;
+}
+
 .module__right ul {
   text-align: center;
 }
