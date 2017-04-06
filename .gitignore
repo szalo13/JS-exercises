@@ -59,9 +59,3 @@ typings/
 
 # sass-cache
 .sass-cache
-
-#compiled css folder
-css/
-
-#compiled js folder
-js/

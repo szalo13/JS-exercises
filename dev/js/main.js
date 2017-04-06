@@ -243,7 +243,7 @@ jQuery(document).ready(function($) {
             let header = $('.sticky-header');
             let hWidth = header.width();
             let hOffsetTop;
-
+ 
             if (selector) {
 
                 if (header[0]) hOffsetTop = header[0].offsetTop;
